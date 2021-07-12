@@ -83,6 +83,14 @@ coverage: ## generate coverprofiles from the unit tests
 		fi; \
 	done )
 
+haddr:
+	@echo "$(WHALE) $@"
+	@docker build -t registry:haddr .
+
+haddr-run: haddr
+	@echo "$(WHALE) $@"
+	@docker-compose up
+
 FORCE:
 
 # Build a binary from a cmd.

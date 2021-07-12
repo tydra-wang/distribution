@@ -1,0 +1,32 @@
+version: 0.1
+log:
+  level: warn
+  fields:
+    service: registry
+    environment: development
+storage:
+  delete:
+    enabled: true
+  filesystem:
+    rootdirectory: /var/lib/registry
+http:
+  addr: :5000
+  debug:
+    addr: :5001
+    prometheus:
+      enabled: true
+      path: /metrics
+  headers:
+    X-Content-Type-Options: [nosniff]
+health:
+  storagedriver:
+    enabled: true
+    interval: 60s
+    threshold: 3
+notifications:
+  events:
+    includereferences: true
+  etcdmq:
+    prefix: /haddr/registry0
+    endpoints:
+    - http://etcd:2379

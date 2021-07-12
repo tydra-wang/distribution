@@ -467,6 +467,11 @@ func (app *App) configureEvents(configuration *configuration.Configuration) {
 		sinks = append(sinks, endpoint)
 	}
 
+	if configuration.Notifications.EtcdMQ != nil {
+		dcontext.GetLogger(app).Info("configuring etcdmq")
+		sinks = append(sinks, notifications.NewEtcdMQSink(*configuration.Notifications.EtcdMQ))
+	}
+
 	// NOTE(stevvooe): Moving to a new queuing implementation is as easy as
 	// replacing broadcaster with a rabbitmq implementation. It's recommended
 	// that the registry instances also act as the workers to keep deployment

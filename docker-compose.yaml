@@ -1,0 +1,15 @@
+version: '3'
+services:
+  registry0:
+    image: registry:haddr
+    volumes:
+      - ./haddr-config-dev.yaml:/etc/docker/registry/config.yml
+    ports:
+      - "5000:5000"
+  etcd:
+    image: quay.io/coreos/etcd:v3.4.15
+    environment:
+      - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+    ports:
+      - "2379:2379"

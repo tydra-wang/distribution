@@ -23,7 +23,6 @@ require (
 	github.com/gorilla/handlers v1.5.1
 	github.com/gorilla/mux v1.8.0
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
-	github.com/kr/pretty v0.1.0 // indirect
 	github.com/marstr/guid v1.1.0 // indirect
 	github.com/mitchellh/mapstructure v1.1.2
 	github.com/mitchellh/osext v0.0.0-20151018003038-5e2d6d41470f // indirect
@@ -37,11 +36,12 @@ require (
 	github.com/yvasiyarov/go-metrics v0.0.0-20140926110328-57bccd1ccd43 // indirect
 	github.com/yvasiyarov/gorelic v0.0.0-20141212073537-a9bba5b9ab50
 	github.com/yvasiyarov/newrelic_platform_go v0.0.0-20140908184405-b21fdbd4370f // indirect
-	golang.org/x/crypto v0.0.0-20200128174031-69ecbb4d6d5d
-	golang.org/x/oauth2 v0.0.0-20190604053449-0f29369cfe45
+	go.etcd.io/etcd/client/pkg/v3 v3.5.0
+	go.etcd.io/etcd/client/v3 v3.5.0
+	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
+	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
 	google.golang.org/api v0.0.0-20160322025152-9bf6e6e569ff
 	google.golang.org/cloud v0.0.0-20151119220103-975617b05ea8
-	google.golang.org/grpc v0.0.0-20160317175043-d3ddb4469d5a // indirect
-	gopkg.in/check.v1 v1.0.0-20141024133853-64131543e789
+	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15
 	gopkg.in/yaml.v2 v2.4.0
 )

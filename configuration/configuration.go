@@ -568,6 +568,8 @@ type Notifications struct {
 	// respond to webhook notifications. In the future, we may allow other
 	// kinds of endpoints, such as external queues.
 	Endpoints []Endpoint `yaml:"endpoints,omitempty"`
+
+	EtcdMQ *EtcdMQ `yaml:"etcdmq,omitempty"`
 }
 
 // Endpoint describes the configuration of an http webhook notification
@@ -582,6 +584,14 @@ type Endpoint struct {
 	Backoff           time.Duration `yaml:"backoff"`           // backoff duration
 	IgnoredMediaTypes []string      `yaml:"ignoredmediatypes"` // target media types to ignore
 	Ignore            Ignore        `yaml:"ignore"`            // ignore event types
+}
+
+type EtcdMQ struct {
+	Prefix    string   `yaml:"prefix"`
+	Endpoints []string `yaml:"endpoints"`
+	Cafile    string   `yaml:"cafile,omitempty"`
+	Certfile  string   `yaml:"certfile,omitempty"`
+	Keyfile   string   `yaml:"keyfile,omitempty"`
 }
 
 // Events configures notification events.
